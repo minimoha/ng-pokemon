@@ -2,6 +2,11 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Pokemon } from './models/pokemon';
 
+interface Nav {
+  link: string,
+  name: string,
+  exact: boolean
+}
 
 
 @Component({
@@ -10,6 +15,20 @@ import { Pokemon } from './models/pokemon';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+  nav: Nav[] = [
+    { 
+      link: '/',
+      name: 'Home',
+      exact: true
+    },
+    { 
+      link: '/badroute',
+      name: 'Bad Route',
+      exact: true
+    },
+  ]
+
   title: string;
   favAnimal: string;
   pokemonName: string = ""
